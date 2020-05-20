@@ -2,7 +2,6 @@ import React from "react"
 import Layout from "../components/layout"
 import styled from "styled-components"
 import About from "./about"
-
 const Home = () => {
   return (
     <Layout>
@@ -15,7 +14,8 @@ const Home = () => {
         <br />
         <div style={{ color: "#d96c06" }}>Retired Marine Veteran.</div>
         <br />
-      </StyH1>
+{/*         <Image />
+ */}      </StyH1>
       <About />
     </Layout>
   )

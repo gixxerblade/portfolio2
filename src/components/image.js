@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-
+import styled from "styled-components"
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
  * images with lazy loading and reduced file sizes. The image is loaded using a
@@ -18,15 +18,20 @@ const Image = () => {
     query {
       marines: file(relativePath: { eq: "marines.png" }) {
         childImageSharp {
-          fixed(width: 200, height: 200) {
-            ...GatsbyImageSharpFixed_tracedSVG
+          fixed(width: 50, height: 50) {
+            ...GatsbyImageSharpFixed
           }
         }
       }
     }
   `)
-
-  return <Img fixed={data.marines.childImageSharp.fluid} />
+  console.log(data)
+  return <Marines fixed={data.marines.childImageSharp.fixed} />
 }
 
 export default Image
+
+const Marines = styled(Img)`
+  width: 5rem;
+  color: #1c6e8c;
+`

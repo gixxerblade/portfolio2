@@ -55,7 +55,7 @@ export default Header
 const StyledHeader = styled.header`
   margin: 0 auto;
   max-width: 960;
-  padding: 1.45rem 1.0875rem;
+  padding: 0.6rem 1.1rem;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
@@ -72,9 +72,7 @@ const StyH1 = styled.h1`
   font-size: 3.5rem;
   max-width: 100%;
   font-family: "Special Elite";
-  &:not[data-scroll="0"] {
-    font-size: 2rem;
-  }
+
   @media only screen and (min-width: 320px) and (max-width: 1224px) {
     font-size: 3rem;
     text-align: center;
@@ -90,7 +88,9 @@ const StyledHead = styled.header`
   top: 0;
   background: #0f0a0a;
   margin-bottom: 1.45rem;
+  height: 7rem;
   @media only screen and (min-width: 320px) and (max-width: 1224px) {
     margin-bottom: 1rem;
+    height: auto;
   }
 `

@@ -14,7 +14,6 @@ const Selfie = () => {
       }
     }
   `)
-  console.log(data)
   return <Pic fluid={data.file.selfie.fluid} fadeIn={true} />
 }
 
