@@ -141,4 +141,7 @@ const StyledBG = styled.div`
   padding: 1rem;
   font-family: "Press Start 2P", cursive;
   font-size: 1.1rem;
+  @media only screen and (min-width: 320px) and (max-width: 1224px) {
+    font-size: 0.8rem;
+  }
 `

@@ -20,8 +20,7 @@ const Selfie = () => {
 export default Selfie
 
 const Pic = styled(Img) `
-width: 100px;
+width:100px;
 border-radius: 50%;
-border: 1px solid #d96c06;
-margin: .5rem;
+border: 3px double #d96c06;
 `

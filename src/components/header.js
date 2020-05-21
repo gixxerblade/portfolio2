@@ -74,7 +74,7 @@ const StyH1 = styled.h1`
   font-family: "Special Elite";
 
   @media only screen and (min-width: 320px) and (max-width: 1224px) {
-    font-size: 3rem;
+    font-size: 2.5rem;
     text-align: center;
   }
 `
@@ -83,12 +83,12 @@ const StyLink = styled(Link)`
   text-decoration: none;
 `
 const StyledHead = styled.header`
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   background: #0f0a0a;
   margin-bottom: 1.45rem;
   height: 7rem;
+  z-index:1;
   @media only screen and (min-width: 320px) and (max-width: 1224px) {
     margin-bottom: 1rem;
     height: auto;

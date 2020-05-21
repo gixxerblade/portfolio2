@@ -7,44 +7,82 @@ import { Mask } from "@styled-icons/boxicons-solid/Mask"
 import { Keyboard } from "@styled-icons/entypo/Keyboard"
 import { Announcement } from "@styled-icons/material-outlined/Announcement"
 import { Pencil } from "@styled-icons/boxicons-solid/Pencil"
+import { Link as Lnk } from "gatsby"
+import { useLocation } from "@reach/router"
+
 const Navbar = () => {
+  const location = useLocation()
   const scrollToTop = () => {
     scroll.scrollToTop()
   }
-  return (
+  const blog = (
     <Navigation>
-      <StyledLink
-        title="Home"
-        activeClass="active"
-        spy={true}
-        smooth={true}
-        offset={-70}
-        duration={500}
-        onClick={scrollToTop}
-      >
+      <StyledLnk to="/home">
         <Home alt="Home" size={45} />
-      </StyledLink>
-      <StyledLink
-        title="About"
-        to="about"
-        activeClass="active"
-        spy={true}
-        smooth={true}
-        offset={-70}
-        duration={500}
-      >
-        <Mask size={45} />
-      </StyledLink>
-      <StyledLink title="Work" to="/home">
-        <Keyboard size={45} />
-      </StyledLink>
-      <StyledLink title="Blog" to="/home">
-        <Pencil size={45} />
-      </StyledLink>
-      <StyledLink title="Contact" to="/home">
-        <Announcement size={45} />
-      </StyledLink>
+      </StyledLnk>
     </Navigation>
+  )
+  console.log(location.pathname)
+  return (
+    <>
+      {location.pathname === "/blog" ? (
+        <Navigation>
+          <StyledLnk to="/home">
+            <Home alt="Home" size={45} />
+          </StyledLnk>
+        </Navigation>
+      ) : (
+        <Navigation>
+          <StyledLink
+            title="Home"
+            activeClass="active"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            onClick={scrollToTop}
+          >
+            <Home alt="Home" size={45} />
+          </StyledLink>
+          <StyledLink
+            title="About"
+            to="about"
+            activeClass="active"
+            spy={true}
+            smooth={true}
+            offset={-150}
+            duration={500}
+          >
+            <Mask size={45} />
+          </StyledLink>
+          <StyledLink
+            title="Work"
+            to="work"
+            activeClass="active"
+            spy={true}
+            smooth={true}
+            offset={-150}
+            duration={500}
+          >
+            <Keyboard size={45} />
+          </StyledLink>
+          <StyledLnk title="Blog" to="/blog">
+            <Pencil size={45} />
+          </StyledLnk>
+          <StyledLink
+            title="Contact"
+            to="contact"
+            activeClass="active"
+            spy={true}
+            smooth={true}
+            offset={-150}
+            duration={500}
+          >
+            <Announcement size={45} />
+          </StyledLink>
+        </Navigation>
+      )}
+    </>
   )
 }
 export default Navbar
@@ -64,6 +102,15 @@ const Navigation = styled.nav`
   }
 `
 const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: #ffffff;
+  margin: 1rem;
+  &:hover {
+    transform: scale(1.1);
+    color: #f7567c;
+  }
+`
+const StyledLnk = styled(Lnk)`
   text-decoration: none;
   color: #ffffff;
   margin: 1rem;

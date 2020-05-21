@@ -50,7 +50,7 @@ const Div = styled.div`
   padding: 0 1.0875rem 1.45rem;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: auto;
   background-color: #f5efed;
 `
 const Main = styled.main`

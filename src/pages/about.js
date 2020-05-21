@@ -12,18 +12,20 @@ const About = () => {
   return (
     <Div id="about">
       <SEO title="About page" />
-      <Selfie />
+      <div style={{ marginBottom: ".5rem" }}>
+        <Selfie />
+      </div>
       <StyH1>About Me</StyH1>
       <StyH2>
         I am retired from the United States Marine Corps and live in North
-        Carolina. I have a bachelor's of science in Information Technology and
-        have completed{" "}
+        Carolina. I have a Bachelor's of Science in Information Technology and
+        have completed a web development training program named&nbsp;
         <a style={{ color: "#1c6e8c" }} href="www.angrypickles.com">
-          Vets Who Code,&nbsp;
+          Vets Who Code
         </a>
-        a web development training program. I am an avid cyclist and like to get
-        my hands dirty in the garden. I have created a small business where I
-        make gourmet pickles named&nbsp;
+        &nbsp; for my schooling. I am an avid cyclist and like to get my hands
+        dirty in the garden. I have created a small business where I make
+        gourmet pickles named&nbsp;
         <a style={{ color: "#1c6e8c" }} href="www.angrypickles.com">
           Angry Pickles.
         </a>
@@ -65,7 +67,7 @@ const StyH2 = styled.h2`
 `
 
 const StyH1 = styled.h1`
-  margin: 0;
+  margin: 0 0 0 0;
   text-align: center;
   font-size: 2rem;
   max-width: 100%;

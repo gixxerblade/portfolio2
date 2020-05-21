@@ -2,21 +2,28 @@ import React from "react"
 import Layout from "../components/layout"
 import styled from "styled-components"
 import About from "./about"
+import Contact from "./contact"
+import Work from "./work"
 const Home = () => {
   return (
     <Layout>
       <StyH1 id="home">
-        <div style={{ color: "#1c6e8c" }}>Hi, I am Stephen.</div>
+        <div style={{ color: "#1c6e8c" }}>Hi, my name is Stephen.</div>
         <br />
-        <div style={{ color: "#d96c06" }}>JavaScript Developer.</div>
+        <div style={{ color: "#d96c06" }}>I'm a JavaScript Developer.</div>
         <br />
-        <div style={{ color: "#1c6e8c" }}>Web Developer.</div>
+        <div style={{ color: "#1c6e8c" }}>I design websites.</div>
         <br />
-        <div style={{ color: "#d96c06" }}>Retired Marine Veteran.</div>
+        <div style={{ color: "#d96c06" }}>
+          I'm also a Retired Marine Veteran.
+        </div>
         <br />
-{/*         <Image />
- */}      </StyH1>
+        {/*         <Image />
+         */}{" "}
+      </StyH1>
       <About />
+      <Work />
+      <Contact />
     </Layout>
   )
 }
