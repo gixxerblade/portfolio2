@@ -79,33 +79,6 @@ const Cover = () => {
       />
       <br />
       <Typed
-        strings={["success onPostBootstrap - 0.322s"]}
-        startDelay={5800}
-        showCursor={false}
-        typeSpeed={1}
-        style={{ color: "#ffffff" }}
-      />
-      <br />
-      <br />
-      <Typed
-        strings={["info bootstrap finished - 3.001s"]}
-        startDelay={6200}
-        showCursor={false}
-        typeSpeed={1}
-        style={{ color: "#ffffff" }}
-      />
-      <br />
-      <br />
-      <Typed
-        strings={["success run queries - 0.032s - 7/7 216.42/s"]}
-        startDelay={6800}
-        showCursor={false}
-        typeSpeed={1}
-        style={{ color: "#ffffff" }}
-      />
-      <br />
-      <br />
-      <Typed
         strings={["You can now view stephen-clark-portfolio in the browser."]}
         startDelay={7200}
         showCursor={false}

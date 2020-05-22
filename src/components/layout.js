@@ -11,7 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import Header from "./header"
 import "./layout.css"
-
+import Theme from '../assets/theme'
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -24,7 +24,7 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <Theme>
       <Header siteTitle={data.site.siteMetadata.title} />
       <Div>
         <Main>{children}</Main>
@@ -33,7 +33,7 @@ const Layout = ({ children }) => {
           <span>Stephen Clark</span>
         </Footer>
       </Div>
-    </>
+    </Theme>
   )
 }
 
@@ -44,22 +44,24 @@ Layout.propTypes = {
 export default Layout
 
 const Div = styled.div`
-  font-family: "Special Elite", cursive;
+  font-family: "Roboto";
   margin: 0 auto;
   max-width: 960px;
   padding: 0 1.0875rem 1.45rem;
   display: flex;
   flex-direction: column;
   height: auto;
-  background-color: #f5efed;
+  background-color: ${({ theme: { color } }) => color.white};
 `
 const Main = styled.main`
   flex: 1 0 auto;
+  font-family: "Roboto";
 `
 const Footer = styled.footer`
   flex-shrink: 0;
   padding: 20px;
-  color: #0f0a0a;
-  background: #f5efed;
-  border-top: solid #0f0a0a 1px;
+  color: ${({ theme: { color } }) => color.black};
+  background: ${({ theme: { color } }) => color.white};
+  border-top: solid ${({ theme: { color } }) => color.black}; 1px;
+  font-family: "Roboto";
 `

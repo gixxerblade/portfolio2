@@ -17,20 +17,38 @@ const About = () => {
       </div>
       <StyH1>About Me</StyH1>
       <StyH2>
-        I am retired from the United States Marine Corps and live in North
-        Carolina. I have a Bachelor's of Science in Information Technology and
-        have completed a web development training program named&nbsp;
-        <a style={{ color: "#1c6e8c" }} href="www.angrypickles.com">
+        I’m a product focused Javascript developer and entrepreneur based in
+        North Carolina. After my tenure with Marine Corps, I shifted focus to
+        the technology sector and obtained a Bachelors of Science in Information
+        Technology. Not one to leave anything to chance, along with the passion
+        to become the best version of me, I signed up for a program named{" "}
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: "#1c6e8c" }}
+          href="www.vetswhocode.io"
+        >
           Vets Who Code
         </a>
-        &nbsp; for my schooling. I am an avid cyclist and like to get my hands
-        dirty in the garden. I have created a small business where I make
-        gourmet pickles named&nbsp;
-        <a style={{ color: "#1c6e8c" }} href="www.angrypickles.com">
+        . I went through their course work to learn not only how to become a
+        better programmer but to actually understand the craft of building
+        products for the web with a{" "}
+        <span style={{ textDecoration: "underline" }}>team</span>. When I was
+        not learning I focused on building a company named{" "}
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: "#1c6e8c" }}
+          href="www.angrypickles.com"
+        >
           Angry Pickles.
         </a>
+        . I am proud to have built a product from scratch that actually provides
+        revenue and makes people happy. When I am not building, learning or
+        making pickles, I am an avid Cyclist and Gardener.
       </StyH2>
       <Link
+        to="home"
         activeClass="active"
         spy={true}
         smooth={true}
@@ -50,20 +68,20 @@ const StyH3 = styled.h3`
   text-decoration: underline;
   align-self: flex-end;
   bottom: 0;
-  margin: 5rem;
+  margin: 1rem;
   text-align: left;
   font-size: 1rem;
   width: 90%;
-  font-family: "Special Elite", cursive;
-  color: #1c6e8c;
+  font-family: "Roboto";
+  color: ${({ theme: { color } }) => color.blue};
 `
 const StyH2 = styled.h2`
   margin: 1rem;
   text-align: justify;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   max-width: 100%;
-  font-family: "Special Elite", cursive;
-  color: #d96c06;
+  font-family: "Roboto";
+  color: ${({ theme: { color } }) => color.orange};
 `
 
 const StyH1 = styled.h1`
@@ -71,9 +89,9 @@ const StyH1 = styled.h1`
   text-align: center;
   font-size: 2rem;
   max-width: 100%;
-  font-family: "Special Elite", cursive;
-  color: #1c6e8c;
-  text-decoration: underline overline #d96c06;
+  font-family: "Roboto";
+  color: ${({ theme: { color } }) => color.blue};
+  text-decoration: underline overline ${({ theme: { color } }) => color.orange};
 `
 const Div = styled.div`
   display: flex;
@@ -82,10 +100,5 @@ const Div = styled.div`
   align-items: center;
   position: relative;
   height: 90vh;
-  font-family: "Special Elite", cursive;
+  font-family: "Roboto";
 `
-/* 
-I am retired from the United States Marine Corps and live in North Carolina. I have a bachelor's of science in Information Technology and have completed Vets Who Code, a web development training program (Bootcamp). I am an avid cyclist and like to get my hands dirty in the garden. I have created a small business where I make gourmet pickles named Angry Pickles.
-
-
-*/

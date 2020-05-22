@@ -15,25 +15,20 @@ const Navbar = () => {
   const scrollToTop = () => {
     scroll.scrollToTop()
   }
-  const blog = (
-    <Navigation>
-      <StyledLnk to="/home">
-        <Home alt="Home" size={45} />
-      </StyledLnk>
-    </Navigation>
-  )
-  console.log(location.pathname)
+
   return (
     <>
-      {location.pathname === "/blog" ? (
+      {location.pathname.match(/^\/blog/) ||
+      location.pathname.match(/^\/post/) ? (
         <Navigation>
-          <StyledLnk to="/home">
+          <StyledLnk to="/">
             <Home alt="Home" size={45} />
           </StyledLnk>
         </Navigation>
       ) : (
         <Navigation>
           <StyledLink
+            to="home"
             title="Home"
             activeClass="active"
             spy={true}

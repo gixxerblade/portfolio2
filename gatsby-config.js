@@ -31,11 +31,13 @@ module.exports = {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: ["Balsamiq Sans", "Press Start 2P", "Special Elite"],
+          families: ["Roboto"],
         },
       },
     },
     `gatsby-plugin-styled-components`,
+    // Custom plugin to pull in posts from me
+    `gatsby-source-dev`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

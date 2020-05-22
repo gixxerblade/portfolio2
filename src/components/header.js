@@ -71,7 +71,7 @@ const StyH1 = styled.h1`
   margin: 0;
   font-size: 3.5rem;
   max-width: 100%;
-  font-family: "Special Elite";
+  font-family: "Roboto";
 
   @media only screen and (min-width: 320px) and (max-width: 1224px) {
     font-size: 2.5rem;
@@ -88,7 +88,7 @@ const StyledHead = styled.header`
   background: #0f0a0a;
   margin-bottom: 1.45rem;
   height: 7rem;
-  z-index:1;
+  z-index: 1;
   @media only screen and (min-width: 320px) and (max-width: 1224px) {
     margin-bottom: 1rem;
     height: auto;

@@ -9,7 +9,18 @@ const Contact = () => {
   return (
     <Div id="contact">
       <H1>Contact Me</H1>
+      <ul>
+        <LI>Some</LI>
+        <LI>Links</LI>
+        <LI>Here</LI>
+        <LI>
+          <span role="img" aria-label="emoji">
+            😎
+          </span>
+        </LI>
+      </ul>
       <Link
+        to="home"
         activeClass="active"
         spy={true}
         smooth={true}
@@ -17,12 +28,6 @@ const Contact = () => {
         duration={500}
         onClick={scrollToTop}
       >
-        <ul>
-          <LI>Some</LI>
-          <LI>Links</LI>
-          <LI>Here</LI>
-          <LI>😎</LI>
-        </ul>
         <StyH3>Go Home</StyH3>
       </Link>
     </Div>
@@ -37,29 +42,30 @@ const Div = styled.div`
   align-items: center;
   position: relative;
   height: 90vh;
-  font-family: "Special Elite", cursive;
+  font-family: "Roboto";
 `
 const StyH3 = styled.h3`
-  width: 100%;
+  cursor: pointer;
   text-decoration: underline;
   align-self: flex-end;
   bottom: 0;
-  margin: 5rem;
+  margin: 1rem;
   text-align: left;
   font-size: 1rem;
-  width: 90%;
-  font-family: "Special Elite", cursive;
-  color: #1c6e8c;
+  font-family: "Roboto";
+  color: ${({ theme: { color } }) => color.blue};
 `
 const H1 = styled.h1`
+  margin: 0 0 0 0;
   text-align: center;
   font-size: 2rem;
   max-width: 100%;
-  font-family: "Special Elite", cursive;
-  color: #0f0a0a;
+  font-family: "Roboto";
+  color: ${({ theme: { color } }) => color.blue};
+  text-decoration: underline overline ${({ theme: { color } }) => color.orange};
 `
-const LI = styled.li `
-list-style: none;
-text-align: center;
-font-size: 1.2rem;
+const LI = styled.li`
+  list-style: none;
+  text-align: center;
+  font-size: 1.2rem;
 `

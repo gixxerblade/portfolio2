@@ -8,18 +8,12 @@ const Home = () => {
   return (
     <Layout>
       <StyH1 id="home">
-        <div style={{ color: "#1c6e8c" }}>Hi, my name is Stephen.</div>
+        <BlueDiv>Hi, my name is Stephen.</BlueDiv>
         <br />
-        <div style={{ color: "#d96c06" }}>I'm a JavaScript Developer.</div>
+        <OrangeDiv>I'm a JavaScript Developer.</OrangeDiv>
         <br />
-        <div style={{ color: "#1c6e8c" }}>I design websites.</div>
+        <BlueDiv>I design websites.</BlueDiv>
         <br />
-        <div style={{ color: "#d96c06" }}>
-          I'm also a Retired Marine Veteran.
-        </div>
-        <br />
-        {/*         <Image />
-         */}{" "}
       </StyH1>
       <About />
       <Work />
@@ -39,10 +33,16 @@ const StyH1 = styled.h1`
   font-size: 2rem;
   max-width: 100%;
   height: 100vh;
-  font-family: "Special Elite", cursive;
-  color: #0f0a0a;
+  font-family: "Roboto";
+  color: ${({ theme: { color } }) => color.black};
   @media only screen and (min-width: 320px) and (max-width: 1224px) {
     font-size: 2rem;
     text-align: center;
   }
+`
+const OrangeDiv = styled.div`
+  color: ${({ theme: { color } }) => color.orange};
+`
+const BlueDiv = styled.div`
+  color: ${({ theme: { color } }) => color.blue};
 `
