@@ -23,16 +23,6 @@ const Work = () => {
   const images = data.allFile.nodes
 
   // Styled all icons the same
-  const withStyledIcon = icon => {
-    return styled(icon)`
-      color: ${({ theme: { color } }) => color.orange};
-      &:hover {
-        color: ${({ theme: { color } }) => color.green};
-      }
-    `
-  }
-  const CodeAltStyled = withStyledIcon(CodeAlt)
-  const LinkExtStyled = withStyledIcon(LinkExternal)
   // JSON data for making project cards
   const text = [
     {
@@ -60,7 +50,7 @@ const Work = () => {
     },
   ]
   const all = [...images, ...text]
- 
+  console.log(all)
   // react-scroll function to return page to the top
   const scrollToTop = () => {
     scroll.scrollToTop()
@@ -116,6 +106,16 @@ const Work = () => {
   )
 }
 export default Work
+const withStyledIcon = icon => {
+  return styled(icon)`
+    ${props => props.theme.colors.orange};
+    &:hover {
+      ${props => props.theme.colors.green};
+    }
+  `
+}
+const CodeAltStyled = withStyledIcon(CodeAlt)
+const LinkExtStyled = withStyledIcon(LinkExternal)
 
 // Styled Components for page.
 const WorkDiv = styled.div`
@@ -144,7 +144,7 @@ const H3 = styled.h3`
   z-index: 1;
   font-family: "Roboto";
   margin: 0 0 0.2rem 0;
-  color: ${({ theme: { color } }) => color.blue};
+  color: ${props => props.theme.colors.blue};
   box-shadow: 0 0 0.1 0.1rem rgba(15, 10, 10, 0.5);
 `
 
@@ -155,7 +155,7 @@ const GoHomeH3 = styled.h3`
   text-align: center;
   font-size: 1rem;
   font-family: "Roboto";
-  color: ${({ theme: { color } }) => color.blue};
+  color: ${props => props.theme.colors.blue};
 `
 const H1 = styled.h1`
   margin: 0 0 0 0;
@@ -163,8 +163,8 @@ const H1 = styled.h1`
   font-size: 2rem;
   max-width: 100%;
   font-family: "Roboto";
-  color: ${({ theme: { color } }) => color.blue};
-  text-decoration: underline overline ${({ theme: { color } }) => color.orange};
+  color: ${props => props.theme.colors.blue};
+  text-decoration: underline overline ${props => props.theme.colors.orange};
 `
 const InvoiceBox = styled.div`
   display: flex;
@@ -179,7 +179,7 @@ const InvoiceBox = styled.div`
   font-size: 1rem;
   line-height: 1.5rem;
   font-family: "Poppins", sans-serif;
-  color: ${({ theme: { color } }) => color.blue};
+  color: ${props => props.theme.colors.blue};
   overflow: hidden;
   transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
   &:hover {

@@ -11,7 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import Header from "./header"
 import "./layout.css"
-import Theme from '../assets/theme'
+import Theme from "../assets/theme"
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -51,7 +51,7 @@ const Div = styled.div`
   display: flex;
   flex-direction: column;
   height: auto;
-  background-color: ${({ theme: { color } }) => color.white};
+  background-color: ${props => props.theme.colors.white};
 `
 const Main = styled.main`
   flex: 1 0 auto;
@@ -60,8 +60,8 @@ const Main = styled.main`
 const Footer = styled.footer`
   flex-shrink: 0;
   padding: 20px;
-  color: ${({ theme: { color } }) => color.black};
-  background: ${({ theme: { color } }) => color.white};
-  border-top: solid ${({ theme: { color } }) => color.black}; 1px;
+  color: ${props => props.theme.colors.black};
+  background: ${props => props.theme.colors.white};
+  border-top: solid ${props => props.theme.colors.black} 1px;
   font-family: "Roboto";
 `

@@ -73,7 +73,7 @@ const StyH3 = styled.h3`
   font-size: 1rem;
   width: 90%;
   font-family: "Roboto";
-  color: ${({ theme: { color } }) => color.blue};
+  color: ${props => props.theme.colors.blue};
 `
 const StyH2 = styled.h2`
   margin: 1rem;
@@ -81,7 +81,7 @@ const StyH2 = styled.h2`
   font-size: 1.2rem;
   max-width: 100%;
   font-family: "Roboto";
-  color: ${({ theme: { color } }) => color.orange};
+  color: ${props => props.theme.colors.orange};
 `
 
 const StyH1 = styled.h1`
@@ -90,8 +90,8 @@ const StyH1 = styled.h1`
   font-size: 2rem;
   max-width: 100%;
   font-family: "Roboto";
-  color: ${({ theme: { color } }) => color.blue};
-  text-decoration: underline overline ${({ theme: { color } }) => color.orange};
+  color: ${props => props.theme.colors.blue};
+  text-decoration: underline overline ${props => props.theme.colors.orange};
 `
 const Div = styled.div`
   display: flex;

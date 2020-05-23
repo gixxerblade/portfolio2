@@ -53,7 +53,7 @@ const StyH3 = styled.h3`
   text-align: left;
   font-size: 1rem;
   font-family: "Roboto";
-  color: ${({ theme: { color } }) => color.blue};
+  color: ${props => props.theme.colors.blue};
 `
 const H1 = styled.h1`
   margin: 0 0 0 0;
@@ -61,8 +61,8 @@ const H1 = styled.h1`
   font-size: 2rem;
   max-width: 100%;
   font-family: "Roboto";
-  color: ${({ theme: { color } }) => color.blue};
-  text-decoration: underline overline ${({ theme: { color } }) => color.orange};
+  color:${props => props.theme.colors.blue};
+  text-decoration: underline overline ${props => props.theme.colors.orange};
 `
 const LI = styled.li`
   list-style: none;

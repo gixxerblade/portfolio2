@@ -2,7 +2,7 @@ import React from "react"
 import { ThemeProvider } from "styled-components"
 
 const theme = {
-  color: {
+  colors: {
     black: "#0f0a0a",
     white: "#f5efed",
     green: "#92bfb1",

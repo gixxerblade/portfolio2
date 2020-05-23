@@ -56,10 +56,10 @@ export default Blog
 
 //Styled components:
 const LNK = styled(Link)`
-  color: ${({ theme: { color } }) => color.orange};
+  color: ${props => props.theme.colors.orange};
   margin: 0;
   &:hover{
-    color: ${({ theme: { color } }) => color.blue};
+    color: ${props => props.theme.colors.blue};
  
   }
 `
@@ -73,14 +73,14 @@ const H1 = styled.h1`
   font-size: 1.5rem;
   max-width: 100%;
   font-family: "Roboto";
-  color: ${({ theme: { color } }) => color.black};
+  color: ${props => props.theme.colors.black};
 `
 const P = styled.h3`
   margin: 0 0 0.5rem;
   text-align: left;
   font-size: 0.8rem;
   font-family: "Roboto";
-  color: ${({ theme: { color } }) => color.blue};
+  color: ${props => props.theme.colors.blue};
 `
 const StyH1 = styled.h1`
   margin: 0 0 1rem 0;
@@ -88,8 +88,8 @@ const StyH1 = styled.h1`
   font-size: 2rem;
   max-width: 100%;
   font-family: "Roboto";
-  color: ${({ theme: { color } }) => color.blue};
-  text-decoration: underline overline ${({ theme: { color } }) => color.orange};
+  color: ${props => props.theme.colors.blue};
+  text-decoration: underline overline ${props => props.theme.colors.orange};
 `
 
 export const pageQuery = graphql`

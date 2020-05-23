@@ -34,15 +34,15 @@ const StyH1 = styled.h1`
   max-width: 100%;
   height: 100vh;
   font-family: "Roboto";
-  color: ${({ theme: { color } }) => color.black};
+  color: ${props => props.theme.colors.black};
   @media only screen and (min-width: 320px) and (max-width: 1224px) {
     font-size: 2rem;
     text-align: center;
   }
 `
 const OrangeDiv = styled.div`
-  color: ${({ theme: { color } }) => color.orange};
+  color: ${props => props.theme.colors.orange};
 `
 const BlueDiv = styled.div`
-  color: ${({ theme: { color } }) => color.blue};
+  color: ${props => props.theme.colors.blue};
 `
