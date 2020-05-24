@@ -82,6 +82,9 @@ const StyH2 = styled.h2`
   max-width: 100%;
   font-family: "Roboto";
   color: ${props => props.theme.colors.orange};
+  @media only screen and (min-width : 320px) and (max-width : 480px)   {
+    font-size: .9rem;
+  }
 `
 
 const StyH1 = styled.h1`
@@ -99,6 +102,7 @@ const Div = styled.div`
   justify-content: start;
   align-items: center;
   position: relative;
-  height: 90vh;
+  height: 100vh;
   font-family: "Roboto";
+
 `

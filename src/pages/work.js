@@ -12,7 +12,7 @@ const Work = () => {
       allFile(filter: { relativeDirectory: { eq: "work" } }) {
         nodes {
           pic: childImageSharp {
-            fixed(width: 100) {
+            fixed(width: 75) {
               ...GatsbyImageSharpFixed_noBase64
             }
           }
@@ -26,19 +26,21 @@ const Work = () => {
   // JSON data for making project cards
   const text = [
     {
-      title: "Angry Pickles",
-      description:
-        "An ecommerce application to create a storefront with Gatsby, Stripe, & Netlify Functions.",
-      source: "https://github.com/gixxerblade/Angry-Pickles",
-      link: "https://angrypickles.com/home",
-    },
-    {
-      title: "Create, Read, Update, and Delete Tutorial Application",
+      title: "CRUD Tutorial Application",
       description:
         "Created an application to demonstrate persistent storage using Gatsby and React, utilizing Google Firestore for data storage.",
       source:
         "https://dev.to/vetswhocode/build-a-crud-firestore-app-in-react-gatsby-with-hooks-4ig9",
       link: "https://codesandbox.io/s/gatsby-crud-tutorial-c6xs1",
+      images: images[0],
+    },
+    {
+      title: "Angry Pickles",
+      description:
+        "An ecommerce application to create a storefront with Gatsby, Stripe, & Netlify Functions.",
+      source: "https://github.com/gixxerblade/Angry-Pickles",
+      link: "https://angrypickles.com/home",
+      images: images[1],
     },
     {
       title: "Profile Card Creator",
@@ -47,10 +49,9 @@ const Work = () => {
       source:
         "https://dev.to/vetswhocode/react-tutorial-upload-and-fetch-photos-with-cloudinary-2ec9",
       link: "http://profile-card-tut.surge.sh/",
+      images: images[2],
     },
   ]
-  const all = [...images, ...text]
-  console.log(all)
   // react-scroll function to return page to the top
   const scrollToTop = () => {
     scroll.scrollToTop()
@@ -59,10 +60,10 @@ const Work = () => {
   const cards = text.map((data, i) => {
     return (
       <InvoiceBox key={i}>
-        <div>
-          {/*           <Img fixed={images.pic.fixed} fadeIn={true} /> */}
-        </div>
-        <H3>{data.title}</H3>
+        <HeaderImageDiv>
+          <Img fixed={data.images.pic.fixed} fadeIn={true} />
+          <H3>{data.title}</H3>
+        </HeaderImageDiv>
         <P>{data.description}</P>
         <div>
           <a
@@ -108,9 +109,9 @@ const Work = () => {
 export default Work
 const withStyledIcon = icon => {
   return styled(icon)`
-    ${props => props.theme.colors.orange};
+    color: ${props => props.theme.colors.orange};
     &:hover {
-      ${props => props.theme.colors.green};
+      color: ${props => props.theme.colors.green};
     }
   `
 }
@@ -122,10 +123,16 @@ const WorkDiv = styled.div`
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
+  height: auto;
 `
-
+const HeaderImageDiv = styled.div`
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+`
 const P = styled.p`
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   margin: 0rem 0 0 0;
 `
 
@@ -135,7 +142,6 @@ const Div = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
-  height: auto;
   font-family: "Roboto";
 `
 const H3 = styled.h3`
@@ -150,6 +156,7 @@ const H3 = styled.h3`
 
 const GoHomeH3 = styled.h3`
   text-decoration: underline;
+  margin: 0 0 2rem 0;
   bottom: 0;
   margin: 1rem;
   text-align: center;
@@ -170,8 +177,8 @@ const InvoiceBox = styled.div`
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
-  width: 35%;
-  height: 10rem;
+  width: 45%;
+  height: 11rem;
   margin: 1rem;
   padding: 0.5rem;
   border: 1px solid #eee;
@@ -184,5 +191,8 @@ const InvoiceBox = styled.div`
   transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
   &:hover {
     transform: perspective(23rem) rotateX(5deg);
+  }
+  @media only screen and (min-width: 321px) and (max-width: 480px) {
+    width: 85%;
   }
 `

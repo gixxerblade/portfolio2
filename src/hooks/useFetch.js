@@ -12,7 +12,7 @@ const useFetch = (url, options) => {
         if (isSubscribed) {
           setData(data)
           setLoading(false)
-          console.log("Fetch Data: ", data)
+           console.log("Fetch Data: ", data) 
         }
       } catch (error) {
         setError(error)
@@ -21,7 +21,8 @@ const useFetch = (url, options) => {
     }
     fetchData()
     return () => setIsSubscribed(false)
-  }, [isSubscribed])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
   return { data, loading, error }
 }
 

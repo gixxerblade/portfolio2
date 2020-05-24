@@ -16,7 +16,10 @@ const Posts = ({ location }) => {
   return (
     <>
       {loading ? (
-        <BlogSpinner />
+        <>
+          {" "}
+          <BlogSpinner />
+        </>
       ) : (
         <Layout>
           <div className="container">
@@ -27,7 +30,7 @@ const Posts = ({ location }) => {
               width="50%"
             />
             {/* <p>Author: {name}</p> */}
-            <p>Date: {data.readable_publish_date}</p>
+            <p>Date: {data.published_at.split("T")[0]}</p>
             <section>
               <ReactMarkdown source={md} />
             </section>
@@ -48,5 +51,8 @@ const BlogSpinner = styled(Spinner)`
 `
 const LNK = styled(Link)`
   margin: 0;
-  color: ${({ theme: { color } }) => color.orange};
+  color: ${props => props.theme.colors.orange};
+  &:hover {
+    color: ${props => props.theme.colors.green};
+  }
 `

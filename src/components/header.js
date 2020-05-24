@@ -88,7 +88,7 @@ const StyledHead = styled.header`
   background: #0f0a0a;
   margin-bottom: 1.45rem;
   height: 7rem;
-  z-index: 1;
+  z-index: 2;
   @media only screen and (min-width: 320px) and (max-width: 1224px) {
     margin-bottom: 1rem;
     height: auto;
