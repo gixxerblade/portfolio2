@@ -70,7 +70,7 @@ const Navbar = () => {
             activeClass="active"
             spy={true}
             smooth={true}
-            offset={-250}
+            offset={-150}
             duration={500}
           >
             <Announcement size={45} />

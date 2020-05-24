@@ -100,7 +100,7 @@ const Div = styled.div`
   justify-content: start;
   align-items: center;
   position: relative;
-  height: auto;
+  height: 100vh;
   font-family: "Roboto";
   margin: 2rem 0 0 0;
 `
