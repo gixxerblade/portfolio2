@@ -8,18 +8,18 @@ import { Keyboard } from "@styled-icons/entypo/Keyboard"
 import { Announcement } from "@styled-icons/material-outlined/Announcement"
 import { Pencil } from "@styled-icons/boxicons-solid/Pencil"
 import { Link as Lnk } from "gatsby"
-import { useLocation } from "@reach/router"
+import { useLocation, isRedirect } from "@reach/router"
 
 const Navbar = () => {
   const location = useLocation()
   const scrollToTop = () => {
     scroll.scrollToTop()
   }
-
+  console.log(location.pathname)
   return (
     <>
       {location.pathname.match(/^\/blog/) ||
-      location.pathname.match(/^\/post/) ? (
+      location.pathname.match(/^\/post/)  ? (
         <Navigation>
           <StyledLnk to="/">
             <Home alt="Home" size={45} />
