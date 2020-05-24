@@ -17,7 +17,7 @@ const Header = ({ siteTitle }) => {
     <StyledHead>
       {isDesktopOrLaptop && (
         <StyledHeader>
-          <StyLink to="/home">
+          <StyLink to="/">
             <StyH1>
               <Typed
                 strings={[`${siteTitle}`]}
@@ -32,7 +32,7 @@ const Header = ({ siteTitle }) => {
       )}
       {isTabletOrMobile && (
         <StyledHeader>
-          <StyLink to="/home">
+          <StyLink to="/">
             <StyH1>Stephen Clark</StyH1>
           </StyLink>
           <Navbar />
