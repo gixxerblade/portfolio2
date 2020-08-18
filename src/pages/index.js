@@ -6,13 +6,15 @@ import About from "./about"
 import Contact from "./contact"
 import Work from "./work"
 import Blog from "./blog"
+import Cover from "./cover"
 const IndexPage = () => (
   <Router>
-    <Home path="/">
+    <Cover path="/">
+      <Home path="home" />
       <About path="about" />
       <Contact path="contact" />
       <Work path="work" />
-    </Home>
+    </Cover>
     <Blog path="/blog" />
     <NotFoundPage default />
   </Router>
